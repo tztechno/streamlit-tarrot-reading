@@ -1,0 +1,30 @@
+
+streamlit run streamlit_app.py
+
+-------------------
+
+python -m venv .venv
+source .venv/bin/activate
+pip install streamlit
+
+-------------------
+
+git init
+ローカルのフォルダ内にあるすべてのファイルをステージングします。次のコマンドを使用します：
+
+git add .
+ステージングされたファイルをコミットします。コミット メッセージは適切なものに置き換えてください。
+
+git commit -m "Initial commit"
+ローカルのリポジトリを GitHub リポジトリにリンクします。以下のコマンドを使用して、GitHub のリポジトリ URL を追加します。 <repository-url> はあなたの GitHub リポジトリの URL に置き換えてください。
+
+git remote add origin <repository-url>
+ローカルの変更を GitHub にプッシュします。
+
+git push -u origin master
+これで、ローカルのフォルダ内のファイルが GitHub リポジトリにアップロードされます。必要に応じて、master ブランチを適切なブランチ名に置き換えてください。
+
+-------------------
+
+
+
