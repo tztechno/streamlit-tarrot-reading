@@ -19,12 +19,11 @@ git commit -m "Initial commit"
 ローカルのリポジトリを GitHub リポジトリにリンクします。以下のコマンドを使用して、GitHub のリポジトリ URL を追加します。 <repository-url> はあなたの GitHub リポジトリの URL に置き換えてください。
 
 git remote add origin <repository-url>
+git remote add origin streamlit-tarrot-reading
 ローカルの変更を GitHub にプッシュします。
 
-git push -u origin master
+git push -u origin main
 これで、ローカルのフォルダ内のファイルが GitHub リポジトリにアップロードされます。必要に応じて、master ブランチを適切なブランチ名に置き換えてください。
-
--------------------
 
 
 

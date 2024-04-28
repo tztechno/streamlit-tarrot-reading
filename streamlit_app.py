@@ -2,28 +2,27 @@ import streamlit as st
 import pandas as pd
 import os
 import random
-import cv2
+from PIL import Image
 
 data_dir = './cards'
-files=os.listdir(data_dir)
+files = os.listdir(data_dir)
 data = pd.read_json('./tarot-images.json', orient='records')
 data = pd.json_normalize(data['cards'])
-data1=data[['name','img','fortune_telling']][data['arcana']=='Major Arcana']
+data1 = data[['name', 'img', 'fortune_telling']][data['arcana'] == 'Major Arcana']
 
 def predict():
-    rand3=random.sample(range(22),k=3)
-    fortune=[]
-    name=[]
-    file=[]
+    rand3 = random.sample(range(22), k=3)
+    fortune = []
+    name = []
+    file = []
     for i in rand3:
-        fortune+=[data1.loc[i,'fortune_telling'][0]]
-        name+=[data1.loc[i,'name']]
-        file+=[data1.loc[i,'img']]
-    times=['Past','Present','Future']    
+        fortune.append(data1.loc[i, 'fortune_telling'][0])
+        name.append(data1.loc[i, 'name'])
+        file.append(data1.loc[i, 'img'])
+    times = ['Past', 'Present', 'Future']
     images = []
     for i in range(3):
-        img = cv2.imread(os.path.join(data_dir,file[i]))
-        img = cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
+        img = Image.open(os.path.join(data_dir, file[i]))
         images.append(img)
     return times, fortune, name, images
 
